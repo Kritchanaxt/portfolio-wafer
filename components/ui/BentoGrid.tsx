@@ -1,8 +1,9 @@
+"use client";
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 
 // Also install this npm i --save-dev @types/react-lottie
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 
 import { cn } from "@/lib/utils";
 
@@ -52,19 +53,16 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["Figma", "Adobe", "Cinema 4D"];
-  const rightLists = ["HTML", "NextJS", "TypeScript"];
+  const techStack = [
+    "ReactJS", "NextJS", "VueJS", "TailwindCSS",
+    "NodeJS", "Express", "FastAPI", "Go",
+    "Flutter", "SwiftUI", "React Native", "Android Studio",
+    "Docker", "Kubernetes", "AWS", "GCP",
+    "MongoDB", "PostgreSQL", "MySQL", "Firebase", "Supabase",
+    "Git", "Jenkins", "OpenCV", "ML Kit", "LangChain"
+  ];
 
   const [copied, setCopied] = useState(false);
-
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
 
   const handleCopy = () => {
     const text = "i@renat.design";
@@ -141,32 +139,29 @@ export const BentoGridItem = ({
 
           {/* Tech stack list div */}
           {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-              {/* tech stack lists */}
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                {leftLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-              </div>
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-                {rightLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
+            <div className="relative w-full h-full flex justify-center items-center p-2 lg:p-4 overflow-hidden">
+                {/* Radial Gradient to give depth behind the tags */}
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-violet-900/20 via-transparent to-transparent opacity-50"></div>
+                
+                {/* Tag Cluster */}
+                <div className="flex flex-wrap justify-center gap-2 md:gap-3 lg:gap-4 max-w-3xl z-10">
+                    {techStack.map((item, i) => (
+                         <span
+                            key={i}
+                            className="
+                              py-2 px-3 lg:py-3 lg:px-4 
+                              text-xs lg:text-sm text-gray-300 
+                              bg-[#10132E] border border-white/[0.1] rounded-full
+                              cursor-pointer
+                              transition-all duration-300 ease-in-out
+                              hover:scale-110 hover:text-white hover:bg-violet-900/50 hover:border-violet-500
+                              hover:shadow-[0_0_15px_2px_rgba(139,92,246,0.6)]
+                            "
+                        >
+                            {item}
+                        </span>
+                    ))}
+                </div>
             </div>
           )}
           {id === 6 && (
@@ -180,7 +175,15 @@ export const BentoGridItem = ({
                   }`}
               >
                 {/* <img src="/confetti.gif" alt="confetti" /> */}
-                <Lottie options={defaultOptions} height={200} width={400} />
+                <Lottie 
+                  animationData={animationData}
+                  loop={copied}
+                  autoplay={copied}
+                  style={{ height: 200, width: 400 }}
+                  rendererSettings={{
+                    preserveAspectRatio: "xMidYMid slice"
+                  }}
+                />
               </div>
 
               <MagicButton
