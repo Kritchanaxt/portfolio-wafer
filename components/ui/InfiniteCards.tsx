@@ -11,9 +11,10 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    quote: string;
-    name: string;
-    title: string;
+    quote?: string;
+    name?: string;
+    title?: string;
+    img?: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -89,21 +90,29 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            //   change md:w-[450px] to md:w-[60vw] , px-8 py-6 to p-16, border-slate-700 to border-slate-800
-            className="w-[90vw] max-w-full relative rounded-2xl border border-b-0
-             flex-shrink-0 border-slate-800 p-5 md:p-16 md:w-[60vw]"
+            className={cn(
+              "relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-800",
+              item.img 
+                ? "w-auto max-w-[80vw] p-2 bg-transparent border-none" 
+                : "w-[90vw] max-w-full p-5 md:p-16 md:w-[60vw]"
+            )}
             style={{
-              //   background:
-              //     "linear-gradient(180deg, var(--slate-800), var(--slate-900)", //remove this one
-              //   add these two
-              //   you can generate the color from here https://cssgradient.io/
-              background: "rgb(4,7,29)",
-              backgroundColor:
-                "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
+              background: item.img ? "transparent" : "rgb(4,7,29)",
+              backgroundColor: item.img 
+                ? "transparent" 
+                : "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
             }}
-            // change to idx cuz we have the same name
             key={idx}
           >
+            {item.img ? (
+               <div className="relative flex justify-center items-center h-[30vh] md:h-[40vh] w-auto">
+                  <img 
+                    src={item.img} 
+                    alt="Certificate" 
+                    className="h-full w-auto object-contain rounded-xl pointer-events-none" 
+                  />
+               </div>
+            ) : (
             <blockquote>
               <div
                 aria-hidden="true"
@@ -130,6 +139,7 @@ export const InfiniteMovingCards = ({
                 </span>
               </div>
             </blockquote>
+            )}
           </li>
         ))}
       </ul>

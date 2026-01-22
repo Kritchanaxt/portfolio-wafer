@@ -20,7 +20,7 @@ export const gridItems = [
     id: 2,
     title: "I'm very flexible with time zone communications",
     description: "",
-    className: "lg:col-span-3 md:col-span-3 md:row-span-2 min-h-[30vh]",
+    className: "lg:col-span-3 md:col-span-3 md:row-span-2 min-h-[10vh]",
     imgClassName: "",
     titleClassName: "justify-start",
     img: "",
@@ -49,8 +49,8 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Currently working on MindcareAI",
-    description: "Mental Health App",
+    title: "Currently studying Digital Science and Technology",
+    description: "Kasetsart University",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-4/5 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -104,14 +104,7 @@ export const projects = [
   },
 ];
 
-export const testimonials = [
-  {
-    quote:
-      "Working with Kritchanat was a great experience. He is a talented engineer with a strong passion for AI and mobile development.",
-    name: "Colleague",
-    title: "Software Engineer",
-  },
-];
+export const testimonials = [];
 
 export const companies = [
   {
@@ -186,4 +179,19 @@ export const socialMedia = [
     img: "/link.svg",
     link: "https://www.linkedin.com/in/kritchanat-m/",
   },
+];
+
+export const certificates = [
+  { img: "/Certificent/SUMSUNG/SUMSUNG 2.png" },
+  { img: "/Certificent/SUMSUNG/SUMSUNG 1.png" },
+  { img: "/Certificent/Certificate-DTE101-TH.png" },
+  { img: "/Certificent/353bee/353bee_pages-to-jpg-0002.jpg" },
+  { img: "/Certificent/353bee/353bee_pages-to-jpg-0001.jpg" },
+  { img: "/Certificent/SeniorSavior RoboCompanion.jpeg" },
+  { img: "/Certificent/NSC 2025/CertSecondRound_กฤชณัช_100_page-0001.jpg" },
+  { img: "/Certificent/NSC 2025/CertFinalist_กฤชณัช_100_page-0001.jpg" },
+  { img: "/Certificent/EEC-HACKATHON 2025/EEC-HACKATHON 28.png" },
+  { img: "/Certificent/EEC-HACKATHON 2025/EEC-HACKATHON 3.png" },
+  { img: "/Certificent/EEC-HACKATHON 2025/EEC-HACKATHON 4.png" },
+  { img: "/Certificent/เกียรนิยม กำแพงแสน.png" }
 ];

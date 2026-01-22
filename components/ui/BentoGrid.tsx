@@ -57,12 +57,38 @@ export const BentoGridItem = ({
   spareImg?: string;
 }) => {
   const techStack = [
-    "ReactJS", "NextJS", "VueJS", "TailwindCSS",
-    "NodeJS", "Express", "FastAPI", "Go",
-    "Flutter", "SwiftUI", "React Native", "Android Studio",
-    "Docker", "Kubernetes", "AWS", "GCP",
-    "MongoDB", "PostgreSQL", "MySQL", "Firebase", "Supabase",
-    "Git", "Jenkins", "OpenCV", "ML Kit", "LangChain"
+    { name: "React", icon: "https://skillicons.dev/icons?i=react" },
+    { name: "Next.js", icon: "https://skillicons.dev/icons?i=next" },
+    { name: "Vue.js", icon: "https://skillicons.dev/icons?i=vue" },
+    { name: "Tailwind", icon: "https://skillicons.dev/icons?i=tailwind" },
+    { name: "Node.js", icon: "https://skillicons.dev/icons?i=nodejs" },
+    { name: "Express", icon: "https://skillicons.dev/icons?i=express" },
+    { name: "FastAPI", icon: "https://skillicons.dev/icons?i=fastapi" },
+    { name: "Go", icon: "https://skillicons.dev/icons?i=go" },
+    { name: "SwiftUI", icon: "https://developer.apple.com/assets/elements/icons/swiftui/swiftui-256x256_2x.png" },
+    { name: "React Native", icon: "https://skillicons.dev/icons?i=react" },
+    { name: "Android Studio", icon: "https://skillicons.dev/icons?i=androidstudio" },
+    { name: "Flutter", icon: "https://skillicons.dev/icons?i=flutter" },
+    { name: "MongoDB", icon: "https://skillicons.dev/icons?i=mongodb" },
+    { name: "MySQL", icon: "https://skillicons.dev/icons?i=mysql" },
+    { name: "PostgreSQL", icon: "https://skillicons.dev/icons?i=postgres" },
+    { name: "Firebase", icon: "https://skillicons.dev/icons?i=firebase" },
+    { name: "Supabase", icon: "https://skillicons.dev/icons?i=supabase" },
+    { name: "Git", icon: "https://skillicons.dev/icons?i=git" },
+    { name: "Postman", icon: "https://skillicons.dev/icons?i=postman" },
+    { name: "Docker", icon: "https://skillicons.dev/icons?i=docker" },
+    { name: "Kubernetes", icon: "https://skillicons.dev/icons?i=kubernetes" },
+    { name: "Vercel", icon: "https://skillicons.dev/icons?i=vercel" },
+    { name: "Jenkins", icon: "https://skillicons.dev/icons?i=jenkins" },
+    { name: "GitHub Actions", icon: "https://skillicons.dev/icons?i=githubactions" },
+    { name: "n8n", icon: "https://avatars.githubusercontent.com/u/52133374?s=280&v=4" },
+    { name: "AWS", icon: "https://skillicons.dev/icons?i=aws" },
+    { name: "GCP", icon: "https://skillicons.dev/icons?i=gcp" },
+    { name: "ML Kit", icon: "https://developers.google.com/static/ml-kit/images/homepage/hero.png" },
+    { name: "Tesseract", icon: "https://miro.medium.com/0*LaOhMRJBLnR693Aq.png" },
+    { name: "Vision API", icon: "https://developer.apple.com/assets/elements/icons/volumetric-api/volumetric-api-256x256_2x.png" },
+    { name: "OpenCV", icon: "https://skillicons.dev/icons?i=opencv" },
+    { name: "LangChain", icon: "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/langchain-color.png" },
   ];
 
   const [copied, setCopied] = useState(false);
@@ -122,17 +148,20 @@ export const BentoGridItem = ({
         <div
           className={cn(
             titleClassName,
-            "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
+            "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-5"
           )}
         >
           {/* change the order of the title and des, font-extralight, remove text-xs text-neutral-600 dark:text-neutral-300 , change the text-color */}
-          <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
+          <div className="font-sans font-extralight md:max-w-64 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10"
+               style={{ textShadow: "1px 1px 2px rgba(0,0,0,0.8)" }}
+          >
             {description}
           </div>
           {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
           {/* remove mb-2 mt-2 */}
           <div
             className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
+            style={{ textShadow: "1px 1px 4px rgba(0,0,0,0.8)" }}
           >
             {title}
           </div>
@@ -140,31 +169,22 @@ export const BentoGridItem = ({
           {/* for the github 3d globe */}
           {id === 2 && <GridGlobe />}
 
-          {/* Tech stack list div */}
+          {/******** Tech stack list div with grid layout ********/}
           {id === 3 && (
-            <div className="relative w-full h-full flex justify-center items-center p-2 lg:p-4 overflow-hidden">
-                {/* Radial Gradient to give depth behind the tags */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-violet-900/20 via-transparent to-transparent opacity-50"></div>
-                
-                {/* Tag Cluster */}
-                <div className="flex flex-wrap justify-center gap-2 md:gap-3 lg:gap-4 max-w-3xl z-10">
-                    {techStack.map((item, i) => (
-                         <span
-                            key={i}
-                            className="
-                              py-2 px-3 lg:py-3 lg:px-4 
-                              text-xs lg:text-sm text-gray-300 
-                              bg-[#10132E] border border-white/[0.1] rounded-full
-                              cursor-pointer
-                              transition-all duration-300 ease-in-out
-                              hover:scale-110 hover:text-white hover:bg-violet-900/50 hover:border-violet-500
-                              hover:shadow-[0_0_15px_2px_rgba(139,92,246,0.6)]
-                            "
-                        >
-                            {item}
-                        </span>
-                    ))}
-                </div>
+            <div className="flex gap-1 w-full mt-4 justify-center">
+                 {/* Grid for Tech Stack */}
+                 <div className="grid grid-cols-5 md:grid-cols-8 gap-3 md:gap-4 p-2 justify-items-center">
+                     {techStack.map((item, i) => (
+                         <div key={i} className="group relative">
+                             <div className="flex items-center justify-center w-10 h-10 md:w-14 md:h-14 bg-[#10132E] border border-white/[0.1] rounded-xl hover:border-violet-500 transition-colors duration-300 cursor-pointer shadow-lg">
+                                  <img src={item.icon} alt={item.name} className="w-6 h-6 md:w-9 md:h-9 object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
+                             </div>
+                             <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black/80 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50 font-bold border border-white/20">
+                                {item.name}
+                             </span>
+                         </div>
+                     ))}
+                 </div>
             </div>
           )}
           {id === 6 && (

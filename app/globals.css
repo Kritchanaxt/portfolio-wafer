@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Ensures anchor links don't hide behind navbar */
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
