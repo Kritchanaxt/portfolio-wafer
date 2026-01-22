@@ -8,19 +8,19 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "I'm a collaborative Software Engineer passionate about AI and mobile innovation.",
+    title: "I'm a collaborative Software Developer passionate about AI and mobile innovation.",
     description: "",
     className: "lg:col-span-2 md:col-span-5 md:row-span-4 lg:min-h-[90vh]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
-    img: "/b1.svg",
+    img: "/Me.JPG",
     spareImg: "",
   },
   {
     id: 2,
     title: "I'm very flexible with time zone communications",
     description: "",
-    className: "lg:col-span-3 md:col-span-3 md:row-span-2 min-h-[50vh]",
+    className: "lg:col-span-3 md:col-span-3 md:row-span-2 min-h-[30vh]",
     imgClassName: "",
     titleClassName: "justify-start",
     img: "",
@@ -29,7 +29,7 @@ export const gridItems = [
   {
     id: 3,
     title: "My tech stack",
-    description: "I constantly try to improve",
+    description: "",
     className: "lg:col-span-3 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
@@ -52,7 +52,7 @@ export const gridItems = [
     title: "Currently working on MindcareAI",
     description: "Mental Health App",
     className: "md:col-span-3 md:row-span-2",
-    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
+    imgClassName: "absolute right-0 bottom-0 md:w-4/5 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
     img: "/b5.svg",
     spareImg: "/grid.svg",
@@ -76,7 +76,7 @@ export const projects = [
     des: "Mental Health Consultation App. iOS app using SwiftUI and scalable backend with Gin, gRPC, MongoDB, and Redis. Features secure API Gateway and real-time communication.",
     img: "/p1.svg",
     iconLists: ["/dock.svg", "/cloud.svg", "/app.svg"],
-    link: "https://github.com/kritchanat",
+    link: "https://github.com/Kritchanaxt",
   },
   {
     id: 2,
@@ -84,7 +84,7 @@ export const projects = [
     des: "Real-time sign language detection using AI. Integrated with video streaming and low-latency API communication. Award winning project at NSC 2025.",
     img: "/p2.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg"],
-    link: "https://github.com/kritchanat",
+    link: "https://github.com/Kritchanaxt",
   },
   {
     id: 3,
@@ -92,7 +92,7 @@ export const projects = [
     des: "Internship project: Developed macOS API Vision for Text Recognition, Face/Card Detection. Integrated ML Kit and Tesseract OCR for cross-platform solutions.",
     img: "/p3.svg",
     iconLists: ["/c.svg", "/ts.svg"],
-    link: "https://github.com/kritchanat",
+    link: "https://github.com/Kritchanaxt",
   },
   {
     id: 4,
@@ -100,7 +100,7 @@ export const projects = [
     des: "A modern portfolio website built with Next.js, Tailwind CSS, and Framer Motion to showcase my projects and skills.",
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "https://github.com/kritchanat",
+    link: "https://github.com/Kritchanaxt",
   },
 ];
 
@@ -179,16 +179,11 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
-    link: "https://github.com/kritchanat",
+    link: "https://github.com/Kritchanaxt",
   },
   {
     id: 2,
     img: "/link.svg",
-    link: "https://www.linkedin.com/in/kritchanat",
-  },
-  {
-    id: 3,
-    img: "/twit.svg",
-    link: "mailto:kritchanat.dev@gmail.com",
+    link: "https://www.linkedin.com/in/kritchanat-m/",
   },
 ];
